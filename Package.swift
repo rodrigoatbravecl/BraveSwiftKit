@@ -11,6 +11,10 @@ let package = Package(
     ],
     products: [
         .library(
+            name: "BraveSwiftExtensions",
+            targets: ["BraveSwiftExtensions"]),
+        
+        .library(
             name: "BraveSwiftKit",
             targets: ["BraveSwiftKit"]),
     ],
@@ -18,6 +22,10 @@ let package = Package(
         
     ],
     targets: [
+        .target(
+            name: "BraveSwiftExtensions",
+            dependencies: []),
+        
         .target(
             name: "BraveSwiftKit",
             dependencies: []),
