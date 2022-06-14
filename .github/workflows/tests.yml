@@ -1,16 +1,14 @@
-name: CI
+name: Swift
 
-on:  # Trigger the workflow on pull requests on main
-  pull_request:
-    branches:
-    - main
+on: [push]
+
 jobs:
-  spm:
+  build:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v1
-
-    - name: Swift Package Manager Tests
-      run: |
-        swift test --enable-code-coverage
+      - uses: actions/checkout@v3
+      - name: Build
+        run: swift build
+      - name: Run tests
+        run: swift test
