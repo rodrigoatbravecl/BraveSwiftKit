@@ -8,4 +8,4 @@ final class BraveSwiftKitTests: XCTestCase {
         // results.
         XCTAssertEqual(BraveSwiftKit().text, "Hello, World!")
     }
-}
+} 
