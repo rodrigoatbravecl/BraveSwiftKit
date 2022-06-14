@@ -15,6 +15,10 @@ let package = Package(
             targets: ["BraveSwiftExtensions"]),
         
         .library(
+            name: "BraveSwiftDIP",
+            targets: ["BraveSwiftDIP"]),
+        
+        .library(
             name: "BraveSwiftKit",
             targets: ["BraveSwiftKit"]),
     ],
@@ -27,8 +31,24 @@ let package = Package(
             dependencies: []),
         
         .target(
+            name: "BraveSwiftDIP",
+            dependencies: []),
+        
+        .target(
             name: "BraveSwiftKit",
             dependencies: []),
+        
+        .testTarget(
+            name: "BraveSwiftExtensionsTests",
+            dependencies: ["BraveSwiftExtensions"],
+            resources: [.process("Resources/")]
+        ),
+        
+        .testTarget(
+            name: "BraveSwiftDIPTests",
+            dependencies: ["BraveSwiftDIP"],
+            resources: [.process("Resources/")]
+        ),
         
         .testTarget(
             name: "BraveSwiftKitTests",

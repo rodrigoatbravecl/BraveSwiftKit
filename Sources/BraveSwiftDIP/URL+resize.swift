@@ -23,6 +23,10 @@ public extension URL {
             return nil
         }
         
-        return NSUIImage(cgImage: image)
+        #if os(macOS)
+        return image.nsImage
+        #else
+        return image.uiImage
+        #endif
     }
 }

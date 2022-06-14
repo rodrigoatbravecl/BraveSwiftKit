@@ -47,12 +47,6 @@ public extension CIImage {
         return filter.outputImage!
     }
     
-    func nsImage() -> NSImage{
-        let rep: NSCIImageRep = NSCIImageRep(ciImage: self)
-        let nsImage: NSImage = NSImage(size: rep.size)
-        nsImage.addRepresentation(rep)
-        return nsImage
-    }
     
     /// Combines the current image with the given image centered.
     func combined(with image: CIImage) -> CIImage? {
